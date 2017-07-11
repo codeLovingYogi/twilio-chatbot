@@ -1,7 +1,7 @@
 import configparser
 import json
 import apiai
-from flask import Flask
+from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 from twilio.rest import Client
 
@@ -26,7 +26,6 @@ def hello_world():
 
 @app.route("/", methods=['GET', 'POST'])
 def server():
-    from flask import request
     # get SMS input via twilio
     resp = MessagingResponse()
 
